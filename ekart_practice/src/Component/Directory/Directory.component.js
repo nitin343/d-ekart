@@ -23,6 +23,7 @@ class Directory extends React.Component {
                     title: "sneakers",
                     imageUrl: "https://i.ibb.co/0jqHpnp/sneakers.png",
                     id: 3,
+                   
                     linkUrl: "shop/sneakers",
                   },
                   {
@@ -39,6 +40,29 @@ class Directory extends React.Component {
                     id: 5,
                     linkUrl: "shop/mens",
                   },
+                  {
+                   title: '',
+                    imageUrl: "https://assets.myntassets.com/f_webp,w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2020/3/10/c9995341-7675-4835-ad63-f99988b90bcb1583845228786-111.jpg",
+                    large: 'size',
+                   
+                    id: 5,
+                    linkUrl: "shop/mens",
+                  },
+                  {
+                    title: '',
+                     imageUrl: "https://assets.myntassets.com/f_webp,w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2020/4/16/5919ab50-6d27-4467-98b9-d69628b233621587023737170-6.jpg",
+                     large: 'size',
+                    
+                     id: 5,
+                     linkUrl: "shop/mens",
+                   },
+                   {
+                    title: '',
+                     imageUrl: "https://assets.myntassets.com/f_webp,w_196,c_limit,fl_progressive,dpr_2.0/assets/images/2020/3/10/f4b006a7-1327-4755-ae62-9d809c1f1a8c1583845228632-17.jpg",
+                    large: 'size',
+                     id: 5,
+                     linkUrl: "shop/mens",
+                   },
             ]
         }
     }
