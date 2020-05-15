@@ -1,7 +1,8 @@
 import React from "react";
 import "./SearchBar.css";
 import { ReactComponent as Logo } from "../../logo.svg";
-import { Link, withRouter } from "react-router-dom";
+import { Link, withRouter, Redirect } from "react-router-dom";
+import { auth } from "../../firebase/firebase";
 
 
 const currentTab = (history, path) => {
@@ -12,7 +13,7 @@ const currentTab = (history, path) => {
   }
 };
 
-const Search = ({ history }) => {
+const SearchBar = ({ history , onChange ,User}) => {
   return (
     <div>
       <nav>
@@ -44,16 +45,21 @@ const Search = ({ history }) => {
                 Shop{" "}
               </Link>
             </li>
-            <li>
-              <Link
-                style={{ color: "#f2f2f2", textDecoration: "none" }}
-                style={currentTab(history, "/signIn")}
-                to="/signIn"
-              >
-                {" "}
-                SignIn{" "}
-              </Link>
+<li>
+            {User ? (
+              <div  style={{ color: "#f2f2f2", textDecoration: "none"}}
+              className='cursor'
+              style={currentTab(history, "/signIn")} onClick={() => auth.signOut()} >SignOut</div>
+            ): (
+              <Link to='/signIn'style={{ color: "#f2f2f2", textDecoration: "none"  }}
+              className='cursor'
+
+              style={currentTab(history, "/signIn")} onClick={() => auth.signOut()} >Sign In</Link>
+            )}
+
+            {User ? (<Redirect to='/' />) : null}
             </li>
+          
             <li>
               <Link
                 style={{ color: "#f2f2f2", textDecoration: "none" }}
@@ -67,7 +73,7 @@ const Search = ({ history }) => {
           </div>
 
           <li className="search-icon">
-            <input type="search" placeholder="Search" />
+            <input type="search" placeholder="Search"  onChange={onChange}/>
             <label className="icon">
               <span className="fas fa-search"></span>
             </label>
@@ -78,4 +84,4 @@ const Search = ({ history }) => {
   );
 };
 
-export default withRouter(Search);
+export default withRouter(SearchBar);

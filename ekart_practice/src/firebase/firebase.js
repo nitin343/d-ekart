@@ -1,24 +1,67 @@
-import firebase from 'firebase';
-import 'firebase/auth';
+import firebase from 'firebase/app';
 import 'firebase/firestore';
+import 'firebase/auth';
+
+const config = {
+    apiKey: "AIzaSyAEobccDgI4iDT8iMWHoLcO6yd4klCTmpk",
+    authDomain: "dekart-840b5.firebaseapp.com",
+    databaseURL: "https://dekart-840b5.firebaseio.com",
+    projectId: "dekart-840b5",
+    storageBucket: "dekart-840b5.appspot.com",
+    messagingSenderId: "650103368",
+    appId: "1:650103368:web:c848bcb31288283732a67d",
+    measurementId: "G-JH63YXYWVY"
+
+};
 
 
-var firebaseConfig = {
-    apiKey: "AIzaSyDDLuWSaxFbFThv8ByTtBajhGW8eabAgc4",
-    authDomain: "auth-af45f.firebaseapp.com",
-    databaseURL: "https://auth-af45f.firebaseio.com",
-    projectId: "auth-af45f",
-    storageBucket: "auth-af45f.appspot.com",
-    messagingSenderId: "855230511184",
-    appId: "1:855230511184:web:b7e27932a8b7d31810b955",
-    measurementId: "G-LRE698D95N"
-  };
+export const createUserProfileDocument = async (userAuth, additionalData) => {
+  if (!userAuth) return;
 
-  firebase.initializeApp(firebaseConfig)
-  export const auth = firebase.auth()
-  export const firestore = firebase.firestore()
-  
-  const provider = new firebase.auth.FacebookAuthProvider()
-  export function signInWithGoogle() {
-      auth.signInWithPopup(provider)
+const userRef = firestore.doc(`users/${userAuth.uid}`);
+
+  const snapShot = await userRef.get();
+
+  if (!snapShot.exists) {
+    const { displayName, email , password } = userAuth;
+    const createdAt = new Date();
+    try {
+      await userRef.set({
+        displayName,
+        email,
+        password,
+        createdAt,
+        ...additionalData
+      });
+    } catch (error) {
+      console.log('error creating user', error.message);
+    }
   }
+
+  return userRef;
+};
+
+firebase.initializeApp(config);
+
+
+export const auth = firebase.auth();
+export const firestore = firebase.firestore();
+
+var provider = new firebase.auth.GoogleAuthProvider();
+
+
+provider.setCustomParameters({ prompt: 'select_account' });
+
+export const signInWithGoogle = () => auth.signInWithPopup(provider)
+.catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+console.log(errorMessage);
+console.log(errorCode);
+
+ 
+  
+})
+
+export default firebase;

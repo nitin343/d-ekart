@@ -1,11 +1,13 @@
 import React from 'react';
 import './HomePage.scss';
 import Directory from'../../Component/Directory/Directory.component';
+import SearchBar from '../../Component/SearchBar/SearchBar';
 
 class HomePage extends React.Component {
     render(){
         return(
- 
+ <div>
+
 <div className="home1">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
@@ -61,7 +63,7 @@ class HomePage extends React.Component {
   </a>
   </div>
 
-  
+  </div>
 </div>
 
         )
