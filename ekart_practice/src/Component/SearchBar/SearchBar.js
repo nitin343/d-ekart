@@ -3,6 +3,13 @@ import "./SearchBar.css";
 import { ReactComponent as Logo } from "../../logo.svg";
 import { Link, withRouter, Redirect } from "react-router-dom";
 import { auth } from "../../firebase/firebase";
+import { connect } from "react-redux";
+import {ReactComponent as Logo1} from '../../assests/profile.svg';
+import {ReactComponent as Logo2} from '../../assests/bag.svg';
+import PDropdown from '../Profile/profile.component';
+import { hidden } from "../../redux/user/user.actions";
+import { userDetail ,hiddenDropdown } from "../../redux/user/user.reselect";
+import { createStructuredSelector } from "reselect";
 
 
 const currentTab = (history, path) => {
@@ -13,7 +20,16 @@ const currentTab = (history, path) => {
   }
 };
 
-const SearchBar = ({ history , onChange ,User}) => {
+const mapStateToProps = createStructuredSelector ({
+  User: userDetail,
+  hiddenDropdown : hiddenDropdown
+})
+
+const mapDispatchToProps = dispatch => ({
+  hidden: () => dispatch(hidden())
+})
+
+const SearchBar = ({ history , onChange ,User,hidden,hiddenDropdown }) => {
   return (
     <div>
       <nav>
@@ -49,7 +65,7 @@ const SearchBar = ({ history , onChange ,User}) => {
             {User ? (
               <div  style={{ color: "#f2f2f2", textDecoration: "none"}}
               className='cursor'
-              style={currentTab(history, "/signIn")} onClick={() => auth.signOut()} >SignOut</div>
+               onClick={() => auth.signOut()} >SignOut</div>
             ): (
               <Link to='/signIn'style={{ color: "#f2f2f2", textDecoration: "none"  }}
               className='cursor'
@@ -78,10 +94,23 @@ const SearchBar = ({ history , onChange ,User}) => {
               <span className="fas fa-search"></span>
             </label>
           </li>
+
+           <li>
+             <Logo1 style={{width: 40 , height: 40}} className='profile' onClick={hidden}/>
+           </li>
+           <li>
+           <Logo2 style={{width: 40 , height: 40}} className='profile' />
+           <span className='profile-span'> 0 </span>
+           
+         </li>
         </ul>
+
+
       </nav>
+      {hiddenDropdown ? null : <PDropdown  />}
+      
     </div>
   );
 };
 
-export default withRouter(SearchBar);
+export default connect(mapStateToProps,mapDispatchToProps)( withRouter(SearchBar));

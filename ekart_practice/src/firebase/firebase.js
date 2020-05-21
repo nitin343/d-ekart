@@ -23,22 +23,22 @@ const userRef = firestore.doc(`users/${userAuth.uid}`);
   const snapShot = await userRef.get();
 
   if (!snapShot.exists) {
-    const { displayName, email , password } = userAuth;
+    const { displayName, email  } = userAuth;
     const createdAt = new Date();
     try {
       await userRef.set({
         displayName,
         email,
-        password,
         createdAt,
         ...additionalData
       });
     } catch (error) {
       console.log('error creating user', error.message);
     }
-  }
+  }else{
 
   return userRef;
+  }
 };
 
 firebase.initializeApp(config);

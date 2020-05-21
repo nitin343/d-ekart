@@ -4,6 +4,7 @@ import SHOP_DATA from "./Shop-data";
 import CollectionPreview from "../../Component/collection-preview/collection-preview.component";
 
 import SearchBar from "../../Component/SearchBar/SearchBar";
+import { motion } from "framer-motion";
 
 class ShopPage extends React.Component {
   constructor() {

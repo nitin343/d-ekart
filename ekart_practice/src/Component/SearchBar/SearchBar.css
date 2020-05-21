@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 *{
     margin : 0;
-    padding: 0px;
+    /* padding: 0px; */
     box-sizing: border-box;
     font-family: 'Montserrat',sans-serif;
    
@@ -83,6 +83,7 @@ nav ul .search-icon{
     display: flex;
     background: #f2f2f2;
     border-radius: 5px;
+    display: none;
 }
 
 nav ul .search-icon input {
@@ -133,6 +134,30 @@ nav ul li.btn span{
 nav ul li.btn  span.show:before{
     content: '\f00d';
 
+}
+
+.profile {
+    height: 30px;
+    width: 30px;
+    padding: auto;
+    margin-right: 10px 0;
+    fill: white;
+    background: #222222;
+    cursor: pointer;
+    padding: 5px;
+    /* border: 1px solid white; */
+
+    
+}
+
+.profile-span{
+    position: absolute;
+    font-size: 10px;
+    font-weight: bold;
+    top: 33px;
+    right: 55px;
+    color: white;
+    
 }
 
 

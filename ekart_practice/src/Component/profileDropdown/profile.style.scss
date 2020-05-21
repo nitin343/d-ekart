@@ -1,0 +1,59 @@
+
+
+.container{
+    // border: 1px solid black;
+    height: 170px;
+    width: 100%;
+    display : flex;
+    flex-direction: column;
+    justify-content: space-between;
+  margin: auto;
+
+
+    
+
+
+    .div{
+
+          width: 99%;
+
+    .order{
+        // border: 0.6px solid rgb(241, 207, 142);
+        width: 80%;
+        display: flex;
+        
+        margin: 2px -11px;
+        color: black;
+        height: 35px;
+        width: 230px;
+        padding: 4px 20px ;
+        transition: 1s;
+        text-decoration: none;
+  margin: auto;
+
+
+
+        .Logo{
+            width: 20%;
+            
+            margin:0 -20px;
+           
+            // border: 1px solid;
+        }
+
+        .span{
+            display: flex;
+            justify-content: right;
+            padding: auto;
+             margin: auto;
+
+        }
+    }
+
+    &:hover .order{
+        transform: scale(0.8);
+        box-shadow: 1.5px 1.5px 1.5px rgb(247, 85, 85);
+    }
+
+}
+}

@@ -2,11 +2,13 @@ import React from 'react';
 import './HomePage.scss';
 import Directory from'../../Component/Directory/Directory.component';
 import SearchBar from '../../Component/SearchBar/SearchBar';
+import { motion } from 'framer-motion';
 
 class HomePage extends React.Component {
     render(){
         return(
- <div>
+ <motion.div exit={{opacity: 0}}
+ initial={{opacity: 0}} animate={{opacity: 1}} >
 
 <div className="home1">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -64,7 +66,7 @@ class HomePage extends React.Component {
   </div>
 
   </div>
-</div>
+</motion.div >
 
         )
     }
