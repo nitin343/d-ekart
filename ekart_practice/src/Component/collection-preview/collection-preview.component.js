@@ -1,6 +1,7 @@
 import React from 'react';
 import './collection-preview.style.scss';
 import CollectionItems from '../collection-items/collection-items.component';
+import CButton from '../CButton/Cbotton.component';
 
 const CollectionPreview = ({ title ,items}) => (
        <div className='collection-preview'>
@@ -10,10 +11,12 @@ const CollectionPreview = ({ title ,items}) => (
          <div className='preview' >
 
            {
-               items.map(({
-                   id , ...otherItemsProp
-               }) => (
-                   <CollectionItems key={id} {...otherItemsProp} />
+               items
+               .filter((items, index) => index < 4)
+               .map((
+                 items
+               ) => (
+                   <CollectionItems key={items.id} items={items} />
                ))
            }
          </div>

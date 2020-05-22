@@ -57,9 +57,11 @@ nav ul li.logo .Svglogo{
 
 nav ul div.items{
     padding: 0 25px;
-    display: inline-flex;
+    display: flex;
     color: #f2f2f2;
     text-decoration: none;
+    /* border: 1px solid orange; */
+    
 }
  
 
@@ -198,11 +200,21 @@ nav ul li.btn  span.show:before{
 
        align-items: center;
         margin-bottom: 10px;
-        right: 0;
+       padding: 0 0;
         width: 100%;
         background: #222222;
-        
-        transition: top .4s;
+        /* border: 1px solid orange; */
+       
+    }
+
+    .profile-span{
+        position: absolute;
+        font-size: 10px;
+        font-weight: bold;
+        top: 58px;
+        right: 157px;
+        color: white;
+      
     }
 
     nav ul div.items li{

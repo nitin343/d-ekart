@@ -5,7 +5,7 @@ import {ReactComponent as Logo1} from '../../assests/box.svg'
 import {ReactComponent as Logo2} from '../../assests/Cart.svg'
 import {ReactComponent as Logo3} from '../../assests/wishlist-2.svg'
 
-const ProfileShow = () => {
+const ProfileShow = ({history}) => {
   return (
     <div className="container">
       <div className="div">
@@ -24,7 +24,7 @@ const ProfileShow = () => {
       </div>
       <div className="div">
         {" "}
-        <Link to="/sigIn" className="order">
+        <Link  onClick={() => { history.push("/checkout")}}  className="order">
           {" "}<Logo2 className='Logo' />
            <span className='span'> Checkout </span>
         </Link>{" "}

@@ -12,7 +12,7 @@ const PDropdown = ({User }) => {
 
   
     return(
-        <div className='container'>
+        
         <div className="cart-dropdown">
         <div className="cart-items">
         <p className='name'>Hello &nbsp;{
@@ -33,7 +33,7 @@ const PDropdown = ({User }) => {
         }
         </div>
         </div>
-        </div>
+       
         )}
         
         const mapStateToProps = createStructuredSelector({

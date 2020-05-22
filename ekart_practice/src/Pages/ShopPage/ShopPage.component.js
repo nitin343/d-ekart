@@ -30,7 +30,7 @@ class ShopPage extends React.Component {
         ))}
       </div>
     );
-  }
+  }z
 }
 
 export default ShopPage;

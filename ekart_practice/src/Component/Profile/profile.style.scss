@@ -66,13 +66,31 @@ body{
    }
       
     }
-  }
-    // &:hover .Link1{
-    //   box-shadow: 1px 2px 2px 1px;
   
-    // }
   
     
   
   
  
+    @media screen and (max-width: 400px){
+    .cart-dropdown {
+    position: absolute;
+    width: 240px;
+    height: 340px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    border: 1px solid black;
+    background-color: white;
+    top: 90px;
+    right: auto;
+    z-index: 15;
+  margin: auto;
+  opacity: 0.95;
+  margin-bottom: 10px;
+  
+    }
+     
+  }
+    
+  }

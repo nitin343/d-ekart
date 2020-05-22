@@ -10,6 +10,9 @@ import PDropdown from '../Profile/profile.component';
 import { hidden } from "../../redux/user/user.actions";
 import { userDetail ,hiddenDropdown } from "../../redux/user/user.reselect";
 import { createStructuredSelector } from "reselect";
+import Checkout from "../../Pages/checkout-page/checkout.component";
+import { selectCartItemCount } from "../../redux/cart/cart.reselect";
+
 
 
 const currentTab = (history, path) => {
@@ -20,16 +23,19 @@ const currentTab = (history, path) => {
   }
 };
 
+
 const mapStateToProps = createStructuredSelector ({
   User: userDetail,
-  hiddenDropdown : hiddenDropdown
+  hiddenDropdown : hiddenDropdown,
+  itemCount: selectCartItemCount
+  
 })
 
 const mapDispatchToProps = dispatch => ({
   hidden: () => dispatch(hidden())
 })
 
-const SearchBar = ({ history , onChange ,User,hidden,hiddenDropdown }) => {
+const SearchBar = ({ history , onChange ,User,hidden,hiddenDropdown,itemCount }) => {
   return (
     <div>
       <nav>
@@ -99,8 +105,8 @@ const SearchBar = ({ history , onChange ,User,hidden,hiddenDropdown }) => {
              <Logo1 style={{width: 40 , height: 40}} className='profile' onClick={hidden}/>
            </li>
            <li>
-           <Logo2 style={{width: 40 , height: 40}} className='profile' />
-           <span className='profile-span'> 0 </span>
+           <Logo2 style={{width: 40 , height: 40}} className='profile'  onClick={() => { history.push("/checkout")}}/>
+           <span className='profile-span' onClick={() => { history.push("/checkout")}} style={{cursor: 'pointer'}}> {itemCount} </span>
            
          </li>
         </ul>
@@ -113,4 +119,4 @@ const SearchBar = ({ history , onChange ,User,hidden,hiddenDropdown }) => {
   );
 };
 
-export default connect(mapStateToProps,mapDispatchToProps)( withRouter(SearchBar));
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(SearchBar));

@@ -15,6 +15,8 @@ import Sign from './Pages/SignUp/SignUp';
 import { connect } from 'react-redux';
 import { setUser } from './redux/user/user.actions';
 import Shop from './Pages/ShopPage/Shop.page';
+import Checkout from './Pages/checkout-page/checkout.component';
+import ContactUs from './Pages/contact-us/contact-us.component';
 
 
 class App extends React.Component  {
@@ -69,12 +71,14 @@ class App extends React.Component  {
   
     <BrowserRouter>
     <SearchBar />
-    <AnimatePresence exitBeforeEnter>
+    <AnimatePresence >
     <Switch>
     <Route exact path='/' component={HomePage} />
-    <Route exact path='/shop' component={Shop} />
+    <Route  path='/shop' component={Shop} />
     <Route exact path='/signIn' component={SignIn} />
     <Route exact path='/signup' component={Sign} />
+    <Route exact path='/checkout' component={Checkout} />
+    <Route exact path='/contactus' component={ContactUs} />
     </Switch>
     </AnimatePresence>
      <Footer />

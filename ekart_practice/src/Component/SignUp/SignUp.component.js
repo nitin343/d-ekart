@@ -57,7 +57,7 @@ class SignUp extends React.Component {
         
         <div className="sign-up">
         <div className="alert alert-warning" role="alert" 
-        style={{width: 500}}>
+        style={{width: 396}}>
           {this.state.error}
         </div>
           <h2 className="title">I do not have a account</h2>
