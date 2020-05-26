@@ -45,8 +45,13 @@ const Checkout = ({ cartItems , cartAmount }) => {
              card-Number: 4242 4242 4242 4242 <br/>
              Exp-date: 01/21 &nbsp; &nbsp; cvv: 123
         </span>
+        {
+          cartAmount ?
         <StripeCheckoutButton price={cartAmount} item={cartItems}/>
-      </div>
+        :
+         ''
+      }
+        </div>
     </div>
   );
 };
