@@ -49,3 +49,61 @@
     }
   }
 }
+
+
+@media screen and (max-width: 360px){
+  .checkout-item {
+    width: 100%;
+    display: flex;
+    min-height: 100px;
+    border-bottom: 1px solid darkgrey;
+    padding: 8px 0;
+    font-size: 10px;
+    align-items: center;
+    justify-content: center;
+  
+    .image-container {
+      width: 23%;
+      padding-right: 8px;
+  
+      img {
+        width: 60px;
+        height: 70px;
+      }
+    }
+    .name,
+    .quantity,
+    .price {
+      width: 23%;
+    }
+     .price{
+      padding-left: 20px;
+       
+     }
+   
+    .quantity {
+      padding-left: 10px;
+      cursor: pointer;
+  
+      .left{
+        padding: 0 10px;
+        cursor: pointer;
+      }
+  
+      .right{
+        padding: 0 10px;
+        cursor: pointer;
+      }
+    }
+  
+    .remove-button {
+      padding-left: 12px;
+      cursor: pointer;
+  
+      .logo{
+        widows: 20px;
+        height: 20px;
+      }
+    }
+  }
+}

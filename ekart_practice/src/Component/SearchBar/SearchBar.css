@@ -156,9 +156,11 @@ nav ul li.btn  span.show:before{
     position: absolute;
     font-size: 10px;
     font-weight: bold;
-    top: 33px;
-    right: 55px;
+    top: 29px;
+    right: 55.8px;
+
     color: white;
+    /* border: 1px solid orange; */
     
 }
 

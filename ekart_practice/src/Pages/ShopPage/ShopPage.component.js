@@ -1,36 +1,22 @@
 import React from "react";
 import "./ShopPage.style.scss";
-import SHOP_DATA from "./Shop-data";
 import CollectionPreview from "../../Component/collection-preview/collection-preview.component";
+import { createStructuredSelector } from "reselect";
+import { selectShopCollectionForPreview } from "../../redux/Shop/shop.selector";
+import { connect } from "react-redux";
 
-import SearchBar from "../../Component/SearchBar/SearchBar";
-import { motion } from "framer-motion";
+const ShopPage = ({ collections }) => {
+  return (
+    <div className="shop-page">
+      {collections.map(({ id, ...otherCollectionsProp }) => (
+        <CollectionPreview key={id} {...otherCollectionsProp} />
+      ))}
+    </div>
+  );
+};
 
-class ShopPage extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      collections: SHOP_DATA,
-      searchField: "",
-    };
-  }
+const mapStateToProps = createStructuredSelector({
+  collections: selectShopCollectionForPreview,
+});
 
-  render() {
-    const {collections, searchField} = this.state;
-    const filteredMonster = collections.filter(
-        collections => collections.title.toLowerCase().includes(searchField.toLowerCase())
-    )
-    return (
-      <div>
-        
-     
-       
-        {filteredMonster.map(({ id, ...otherFilteredMonsterProp }) => (
-          <CollectionPreview key={id} {...otherFilteredMonsterProp} />
-        ))}
-      </div>
-    );
-  }z
-}
-
-export default ShopPage;
+export default connect(mapStateToProps, null)(ShopPage);

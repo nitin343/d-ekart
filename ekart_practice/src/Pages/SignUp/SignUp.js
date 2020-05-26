@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import SignUp from "../../Component/SignUp/SignUp.component";
-
+import './signUp.scss';
 const pageVariants = {
     
  in: {
@@ -26,7 +26,8 @@ const pageTransition ={
 }
 
 const Sign = () => (
-  <motion.div initial="out" animate="in" exit="out" variants={pageVariants} transition={pageTransition}>
+  <motion.div initial="out" animate="in" exit="out" variants={pageVariants} transition={pageTransition}
+ >
 
   
       <SignUp />

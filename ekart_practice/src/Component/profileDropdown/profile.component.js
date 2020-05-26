@@ -1,6 +1,6 @@
 import React from "react";
 import "./profile.style.scss";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import {ReactComponent as Logo1} from '../../assests/box.svg'
 import {ReactComponent as Logo2} from '../../assests/Cart.svg'
 import {ReactComponent as Logo3} from '../../assests/wishlist-2.svg'
@@ -33,4 +33,4 @@ const ProfileShow = ({history}) => {
   );
 };
 
-export default ProfileShow;
+export default withRouter(ProfileShow);
