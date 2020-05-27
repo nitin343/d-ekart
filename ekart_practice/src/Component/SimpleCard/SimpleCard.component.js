@@ -7,20 +7,21 @@ import { addItem } from "../../redux/cart/cart.action";
 const SimpleCard = ({ item, addItem }) => {
   const { imageUrl, name, price } = item;
   return (
-    <div className="container">
-      <span>WishList</span>
-      <div className="image">
-        <img src={imageUrl} alt="image" className="img" />
-      </div>
-      <div className="cart">
-        <button className="button" onClick={() => addItem(item)}>
-          Add to Cart
-        </button>
-      </div>
-      <div className="footer">
+    <div className="container123">
+      
+    <div
+    className="img"
+    style={{
+      backgroundImage: `url(${imageUrl})`
+    }}
+    />
+        
+      
+      <div className="footer123 ">
         <span className="title1">{name}</span>
         <span className="price">${price}</span>
       </div>
+      <button onClick={() => addItem(item)} inverted className='button123' > Add to cart </button>
     </div>
   );
 };
