@@ -11,8 +11,8 @@ $angle-o: 4px;
 .btn {
   top: 0;
   left: 0;
-  width: 200px;
-  max-height: 40px;
+  width: 300px;
+  height: 60px;
   transition: all .15s linear 0s;
   position: relative;
   display: inline-block;
@@ -20,6 +20,7 @@ $angle-o: 4px;
   background-color: $yellow;
   display: flex;
   justify-content: center;
+  align-items: center;
  margin: auto;
  margin-top: 40px;
   font-size: 12px;

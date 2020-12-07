@@ -22,12 +22,12 @@ const CheckoutItem = ({ cartItems, clearItem, removeItem, addItem }) => {
           &#10095;{" "}
         </span>
       </span>
-      <span className="price"> ${price}</span>
+      <span className="price"> &#8377;{price}</span>
       <div className="remove-button">
         <Logo className="logo" onClick={() => clearItem(cartItems)} />
       </div>
     </div>
-  );
+  ); 
 };
 
 const mapDispatchToProps = (dispatch) => ({

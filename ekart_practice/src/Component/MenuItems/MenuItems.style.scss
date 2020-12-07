@@ -193,18 +193,18 @@
 
 
 .mcollection-item {
-    width: 300px;
+    width: 400px;
     display: flex;
     flex-direction: column;
-    height: 250px;
+    height: 300px;
     justify-content: center;
     
     align-items: center;
     margin: 15px 7.5px 15px;
-    box-shadow: 3px 5px 10px #888888;
+    box-shadow: 1px 5px 5px #888888;
     overflow: hidden;
     justify-content: center;
-    //   border: 1px solid black;
+      // border: 1px solid black;
   
 
     //     min-width: 40%;
@@ -256,9 +256,9 @@
   
       .mprice {
         width: 100%;
-    //   height: auto;
+      height : 35px;
       display: flex;
-    //   margin: auto;
+    
       border: 1px solid rgb(216, 79, 79);
       margin-bottom: 10px;
       justify-content: center;

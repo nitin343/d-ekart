@@ -2,13 +2,18 @@
   width: 22%;
   display: flex;
   flex-direction: column;
-  height: 370px;
+  height: 550px;
   align-items: center;
-  box-shadow: 4px 7px 10px #888888;
+  box-shadow: 2px 5px 5px #888888;
   overflow: hidden;
-  border: 1px solid;
+  
   margin: 8px 10px;
 
+  .heart{
+    width: 25px;
+    height: 25px;
+     
+  }
 
   .image {
     width: 100%;
@@ -16,6 +21,7 @@
     background-size: cover;
     background-position: center;
     margin-bottom: 5px;
+    
   }
 
   .collection-footer {
@@ -24,7 +30,8 @@
     display: flex;
     justify-content: space-between;
     font-size: 18px;
-    margin: 5px 0;
+    margin: 5px 5px;
+    // border: 2px solid yellow;
 
     .name {
       width: 85%;
@@ -35,12 +42,28 @@
       width: 14%;
     }
 
-  
+   
   }
+
+  .ah {
+    // border: 2px solid yellow;
+    width: 99%;
+    display: flex;
+    justify-content: space-around ;
+    align-items: center;
+        
+
+    .heart{
+      cursor: pointer;
+    }
+  }
+
+
 
   .custom-button{
     width: 80%;
     margin: 6px 0;
+    // border: 2px solid green;
   }
 }
 

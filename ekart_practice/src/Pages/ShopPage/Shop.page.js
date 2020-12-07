@@ -34,7 +34,7 @@ const Shop = () => {
     
         <motion.div initial="out" animate="in" exit="out" variants={pageVariants} transition={pageTransition}>
 
- <h1 style={{color: 'orange'}}>Preview Page</h1>
+
        <ShopPage />
     </motion.div>
     )

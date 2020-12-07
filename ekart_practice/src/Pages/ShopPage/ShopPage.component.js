@@ -6,6 +6,7 @@ import { selectShopCollectionForPreview } from "../../redux/Shop/shop.selector";
 import { connect } from "react-redux";
 
 const ShopPage = ({ collections }) => {
+  
   return (
     <div className="shop-page">
       {collections.map(({ id, ...otherCollectionsProp }) => (

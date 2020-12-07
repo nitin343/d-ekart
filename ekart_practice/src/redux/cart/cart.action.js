@@ -9,6 +9,7 @@ export const removeItem = item => ({
   payload: item
 })
 
+
 export const  clearItem = item => ({
   type: 'CLEAR_ITEM',
   payload: item

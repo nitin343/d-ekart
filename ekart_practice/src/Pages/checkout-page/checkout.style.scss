@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: row;
     margin: 20px;
-    margin-bottom: 40px;
+    // margin-bottom: 40px;
 
 .checkout-page {
   width: 90%;
@@ -12,17 +12,17 @@
   flex-direction: column;
   align-items: center;
   margin: 50px auto 0;
-  border: 1.5px solid green;
-  overflow: scroll;
-  box-shadow: 1px 3px 3px;
+  // border: 1.5px solid green;
+  // overflow: scroll;
+  // box-shadow: 1px 3px 3px;
 
   .checkout-header {
     width: 100%;
     padding: 10px 1px;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1.5px solid green;
-    box-shadow: 1px 1px 1px;
+    // border-bottom: 1.5px solid green;
+    // box-shadow: 1px 1px 1px;
 
     .header-block {
       text-transform: capitalize;
@@ -33,30 +33,88 @@
 
 
 .colcontainer{
-    width: 30%;
-    min-height: 10vh;
-    max-height: 40vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 50px auto 0;
-    border: 1.5px solid green;
-    overflow: scroll;
-    box-shadow: 1px 3px 3px;
+   border: none;
+ width: 30%;
+  height: 400px;
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+   
+ border-radius: 20px;
+ 
+    -webkit-box-shadow: 0px 5px 12px 0px rgba(159, 95, 246, 1);
+-moz-box-shadow:    0px 5px 12px 0px rgba(159, 95, 246, 1);
+box-shadow:         0px 5px 12px 0px rgba(159, 95, 246, 1);
+    
 
-    .total{
-        // border: 1px solid black;
-        margin-top: 20px;
-        width: 100%;
-        margin: 5px;
-        display: flex;
-        justify-content: center;
+    .priceDetail{
+      display: flex;
+        width: 530px;
+        // border: 2px solid;
+        height: 60px;
+        // margin-top: -50px;
+        align-items: flex-end;
+        border-bottom: 0.2px solid grey;
         
 
+        .priceDetail1{
+          font-size: 35px;
+          color: grey;
+         font-family: Arial, Helvetica, sans-serif;
+         font-weight: 16px;
         }
-        .price{
-          margin-bottom: 10px;
+
+      
+    }
+  
+    .price2{
+      // margin-top: -50px;
+      display: flex;
+      justify-content: space-between;
+      
+      width: 530px;
+
+
+      .total1{
+        font-size: 25px;
+        font-weight: 16px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .price1{
+        font-size: 25px;
+        font-weight: 16px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+       }
+
+       .price3{
+        //  border: 2px solid yellow;
+         display: flex;
+         justify-content: space-between;
+         padding-top: 10px;
+         width: 530px;
+
+         .total1{
+          font-size: 25px;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+  
+        .price1{
+          font-size: 25px;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+       }
+
+       .paybutt{
+         border: none;
+         background-color: orangered;
+         color: aliceblue;
+         font-size: 20px;
+         width: 300px;
+         height: 50px;
+         border-radius: 10px;
+       }
 
         .detail{
           font-size: 13px;
@@ -66,7 +124,13 @@
         }
     }
 
+.colcontainer{
+  // border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+}
 
 @media screen and (max-width: 492px){
 
@@ -78,17 +142,17 @@
         flex-direction: column;
         align-items: center;
         margin: 50px auto 0;
-        border: 1.5px solid green;
-        overflow: scroll;
-        box-shadow: 1px 3px 3px;
+        // border: 1.5px solid green;
+        // overflow: scroll;
+        // box-shadow: 1px 3px 3px;
       
         .checkout-header {
           width: 100%;
           padding: 10px 1px;
           display: flex;
           justify-content: space-between;
-          border-bottom: 1.5px solid green;
-          box-shadow: 1px 1px 1px;
+          // border-bottom: 1.5px solid green;
+          // box-shadow: 1px 1px 1px;
       
           .header-block {
             text-transform: capitalize;
@@ -107,9 +171,9 @@
         flex-direction: column;
         align-items: center;
         margin: 50px auto 0;
-        border: 1.5px solid green;
-        overflow: scroll;
-        box-shadow: 1px 3px 3px;
+        // border: 1.5px solid green;
+        // overflow: scroll;
+        // box-shadow: 1px 3px 3px;
       
         .checkout-header {
           width: 100%;
@@ -117,8 +181,8 @@
           display: flex;
           font-size: 12px;
           justify-content: space-between;
-          border-bottom: 1.5px solid green;
-          box-shadow: 1px 1px 1px;
+          // border-bottom: 1.5px solid green;
+          // box-shadow: 1px 1px 1px;
       
           .header-block {
             text-transform: capitalize;
